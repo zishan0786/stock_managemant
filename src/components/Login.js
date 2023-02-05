@@ -4,25 +4,26 @@ import Form from 'react-bootstrap/Form';
 
 
 function Login(props) {
+ 
   return (
-    <div>
-      
-    <Form onSubmit={props.AdminLogin}>
+    <div className='container'>
+      <h1>STocK ManaGemaNT</h1>
+    <Form onSubmit={props.AdminLogin} >
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>USERNAME</Form.Label>
+        <Form.Label><b>USERNAME</b></Form.Label>
         <Form.Control type="text" placeholder="Enter Username" name='username' required/>
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+          Enter Your username that do you have.
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label><b>PASSWORD</b></Form.Label>
         <Form.Control type="password" placeholder="Password" name='password' required/>
       </Form.Group>
       
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="dark" type="submit">
+        LOGiN
       </Button>
     </Form>
     </div>
