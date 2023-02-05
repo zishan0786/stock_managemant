@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 function Login(props) {
  
   return (
-    <div className='container'>
+    <div className=''>
       <h1>STocK ManaGemaNT</h1>
     <Form onSubmit={props.AdminLogin} >
       <Form.Group className="mb-3" controlId="formBasicEmail">
