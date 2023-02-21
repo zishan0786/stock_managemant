@@ -18,7 +18,10 @@ function NavMenu() {
           <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/products">Products</Link>
+          <Link className="nav-link" to="/products">PRODUCTS</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/vendors">VENDORS</Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
