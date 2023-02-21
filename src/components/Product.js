@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import axios from "axios";
 
 function Product() {
@@ -16,18 +16,20 @@ function Product() {
       .postForm("http://localhost/API/product_process.php", PrinputValue)
       .then((res) => {
         console.log(res.data);
-        fetchProduct();
       });
   };
 
   // product fetch process
   const [proTable, setProTable] = useState([]);
-
-  const fetchProduct = () => {
-    axios.get("http://localhost/API/product_fetch_process.php").then((res) => {
-      setProTable(res.data);
-    });
-  };
+  useEffect(() => {
+    const fetchProduct = () => {
+      axios.get("http://localhost/API/product_fetch_process.php").then((res) => {
+        setProTable(res.data);
+      });
+    };
+   fetchProduct();
+  },[proTable]);
+  
 
   // update process
   const [isEditing, setIsEditing] = useState("false");
@@ -53,7 +55,6 @@ function Product() {
       })
       .then((res) => {
         console.log(res.data.msg);
-        fetchProduct();
         setIsEditing("false");
       });
   };
@@ -65,7 +66,7 @@ function Product() {
         .postForm("http://localhost/API/delete_process.php", { id: id })
         .then((res) => {
           console.log(res.data);
-          fetchProduct();
+      
         });
     }
   };
